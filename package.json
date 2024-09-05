@@ -1,0 +1,36 @@
+{
+  "name": "@1oglop1/jszip-games",
+  "private": true,
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "author": "Jan Gazda",
+  "repository": "https://github.com/1oglop1/jszip-games",
+  "scripts": {
+    "build": "yarn workspaces foreach -ptv --jobs 2 run build:lambda",
+    "prepublishOnly": "tsc",
+    "prettier": "prettier --write --log-level error .",
+    "prettier-check": "prettier --check ."
+  },
+  "files": [
+    "/dist"
+  ],
+  "workspaces": {
+    "packages": [
+      "ts-sandbox"
+    ]
+  },
+  "devDependencies": {
+    "@babel/helper-get-function-arity": "^7.16.7",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/node": "^20.11.3",
+    "@types/uzip": "^0.20201231.2",
+    "@vercel/ncc": "^0.38.1",
+    "chai": "^4",
+    "fast-check": "^3.13.2",
+    "mocha": "^10",
+    "prettier": "^3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
+  },
+  "packageManager": "yarn@3.6.4"
+}

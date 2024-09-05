@@ -1,0 +1,21 @@
+{
+  "name": "@bluecodecom/ts-sandbox",
+  "version": "1.0.0",
+  "dependencies": {
+    "fflate": "0.8.2",
+    "glob": "11.0.0",
+    "jszip": "3.10.1",
+    "uzip": "0.20201231.0"
+  },
+  "devDependencies": {
+    "@octokit/types": "^12.4.0",
+    "tsx": "^4.7.0"
+  },
+  "scripts": {
+    "start": "node -r ts-node/register index.ts",
+    "unzip-list": "bash -c 'for file in res/*.zip; do unzip -l \"$file\"; done'",
+    "zl": "yarn start && yarn unzip-list",
+    "md5": "bash -c 'for file in res/*.zip; do md5sum \"$file\"; done'",
+    "clean": "rm -rf res"
+  }
+}

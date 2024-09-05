@@ -1,0 +1,4 @@
+pulumi/projects/other/ec2-workstation/packer/packer.json
+dist
+**/._
+.yarn

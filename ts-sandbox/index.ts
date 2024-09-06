@@ -156,6 +156,7 @@ async function withDate(args: Args) {
   if (!fs.existsSync(targetDir)) fs.mkdirSync(targetDir);
   // const date = 504932400000; // 1986-01-01 03:00 UTC
   // const date = new Date("1986-01-01T03:00:00.000Z"); // Wednesday, 1 January 1986 03:00:00 in UTC
+
   await withDate({
     name: `${name}_1980`,
     globPattern,
@@ -170,5 +171,24 @@ async function withDate(args: Args) {
     targetDir,
     cwd,
     date: new Date("1986-01-01T03:00:00.000Z"),
+  });
+
+  // const date = new Date(1980, 0, 1); // January 1, 1980 at 00:00:00 in local time
+  // const date = ; // January 1, 1986 at 03:00:00 in local time
+
+  await withDate({
+    name: `${name}_1980_num`,
+    globPattern,
+    targetDir,
+    cwd,
+    date: new Date(1980, 0, 1),
+  });
+
+  await withDate({
+    name: `${name}_1986_num`,
+    globPattern,
+    targetDir,
+    cwd,
+    date: new Date(1986, 0, 1, 3),
   });
 })();
